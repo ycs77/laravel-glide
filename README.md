@@ -41,8 +41,12 @@ glide_url('avatar/user01-avatar.png', [
     'fit' => 'crop',
 ]);
 
-// Or use Facade
+// https://yi-dai.test/img/avatar/user01-avatar.png/sds4d524g.../sd2g4e1drf2g...img.jpg?w=50&h=50&fit=crop
+```
 
+Or use Facade:
+
+```php
 use Ycs77\LaravelGlide\Facades\Glide;
 
 Glide::url('avatar/user01-avatar.png', [
@@ -50,6 +54,8 @@ Glide::url('avatar/user01-avatar.png', [
     'h' => '50',
     'fit' => 'crop',
 ]);
+
+// https://yi-dai.test/img/avatar/user01-avatar.png/sds4d524g.../sd2g4e1drf2g...img.jpg?w=50&h=50&fit=crop
 ```
 
 Full documation visit: https://glide.thephpleague.com/.
