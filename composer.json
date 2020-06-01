@@ -1,0 +1,44 @@
+{
+    "name": "ycs77/laravel-glide",
+    "description": "Glide image manipulation for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lucas Yang",
+            "email": "yangchenshin77@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "glide",
+        "image",
+        "manipulation"
+    ],
+    "homepage": "https://github.com/ycs77/laravel-glide",
+    "require": {
+        "illuminate/support": ">=5.4",
+        "league/glide": "2.0.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ycs77\\LaravelGlide\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ycs77\\LaravelGlide\\GlideServiceProvider"
+            ],
+            "aliases": {
+                "Glide": "Ycs77\\LaravelGlide\\Facades\\Glide"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
