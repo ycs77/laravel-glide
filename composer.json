@@ -17,6 +17,7 @@
     ],
     "homepage": "https://github.com/ycs77/laravel-glide",
     "require": {
+        "illuminate/http": ">=5.4",
         "illuminate/support": ">=5.4",
         "league/glide": "2.0.x-dev"
     },
