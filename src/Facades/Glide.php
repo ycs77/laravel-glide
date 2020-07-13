@@ -56,7 +56,7 @@ class Glide extends Facade
      */
     public static function route(array $options = [])
     {
-        $options['base_url'] = $options['base_url'] || self::$app['config']['glide.base_url'];
+        $options['base_url'] = $options['base_url'] ?? self::$app['config']['glide.base_url'];
 
         static::$app->make('router')
             ->get('/'.$options['base_url'].'/{path}', $options['action'] ?? '\\'.ImageController::class)
