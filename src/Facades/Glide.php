@@ -51,14 +51,15 @@ class Glide extends Facade
     /**
      * Register the glide image route.
      *
-     * @param  string  $uri
-     * @param  string|null  $action
+     * @param  array  $options
      * @return void
      */
-    public static function route($uri = '/img/{path}', $action = null)
+    public static function route(array $options = [])
     {
+        $options['base_url'] = $options['base_url'] || self::$app['config']['glide.base_url'];
+
         static::$app->make('router')
-            ->get($uri, $action ?? '\\'.ImageController::class)
+            ->get('/'.$options['base_url'].'/{path}', $options['action'] ?? '\\'.ImageController::class)
             ->where('path', '.*');
     }
 
