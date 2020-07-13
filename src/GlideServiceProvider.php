@@ -18,10 +18,11 @@ class GlideServiceProvider extends ServiceProvider
         $this->app->bind('glide', function ($app) {
             $config = $app['config']->get('glide');
 
-            return Server::create(array_merge([
-                'source' => Storage::disk($config['source'])->getDriver(),
-                'cache' => Storage::disk($config['cache'])->getDriver(),
-            ], $config['config']));
+            $config['source'] = Storage::disk($config['source'])->getDriver();
+            $config['cache'] = Storage::disk($config['cache'])->getDriver();
+            $config['watermarks'] = Storage::disk($config['watermarks'])->getDriver();
+
+            return Server::create($config);
         });
 
         $this->app->alias('glide', Server::class);
