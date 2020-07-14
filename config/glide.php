@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'source' => env('GLIDE_SOURCE_DRIVER', 'public'),
+    'source' => env('GLIDE_SOURCE_DRIVER', 'local'),
 
     /*
     |--------------------------------------------------------------------------
