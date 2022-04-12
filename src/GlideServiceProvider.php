@@ -4,7 +4,7 @@ namespace Ycs77\LaravelGlide;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
-use League\Glide\Server;
+use League\Glide\ServerFactory;
 
 class GlideServiceProvider extends ServiceProvider
 {
@@ -15,17 +15,16 @@ class GlideServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('glide', function ($app) {
+        $this->app->singleton('glide', function ($app) {
             $config = $app['config']->get('glide');
 
             $config['source'] = Storage::disk($config['source'])->getDriver();
             $config['cache'] = Storage::disk($config['cache'])->getDriver();
-            $config['watermarks'] = Storage::disk($config['watermarks'])->getDriver();
 
-            return Server::create($config);
+            return ServerFactory::create($config);
         });
 
-        $this->app->alias('glide', Server::class);
+        $this->app->alias('glide', ServerFactory::class);
 
         $this->mergeConfigFrom(
             __DIR__.'/../config/glide.php', 'glide'

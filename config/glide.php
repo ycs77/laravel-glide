@@ -17,14 +17,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Glide Source Folder
+    | Glide Source Path Prefix
     |--------------------------------------------------------------------------
     |
-    | This value is the folder of glide source.
+    | This value is the path prefix of glide source.
     |
     */
 
-    'source_folder' => '',
+    'source_path_prefix' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -41,26 +41,47 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Glide Cache URL
+    | Glide Cache Path Prefix
     |--------------------------------------------------------------------------
     |
-    | This value is the URL prefix of glide cache. If no setting this value,
-    | the default value will use the value of "base_url".
+    | This value is the path prefix of glide cache.
     |
     */
 
-    'cache_url' => null,
+    'cache_path_prefix' => '.glide-cache',
 
     /*
     |--------------------------------------------------------------------------
-    | Glide Cache Folder
+    | Temp Directory
     |--------------------------------------------------------------------------
     |
-    | This value is the folder of glide cache.
+    | This value is the temp directory of glide.
     |
     */
 
-    'cache_folder' => '.glide-cache',
+    'temp_dir' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Group Cache In Folders
+    |--------------------------------------------------------------------------
+    |
+    | This value is the group cache in folders.
+    |
+    */
+
+    'group_cache_in_folders' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cache With File Extensions
+    |--------------------------------------------------------------------------
+    |
+    | This value is the cache with file extensions.
+    |
+    */
+
+    'cache_with_file_extensions' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -88,19 +109,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Glide Image Response Type
-    |--------------------------------------------------------------------------
-    |
-    | This value is the response type of glide server.
-    |
-    | Supported Types: "httpfoundation", "psr7"
-    |
-    */
-
-    'response_type' => 'httpfoundation',
-
-    /*
-    |--------------------------------------------------------------------------
     | Glide Max Image Size
     |--------------------------------------------------------------------------
     |
@@ -112,38 +120,25 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Glide Signature Key
+    | Glide Watermarks Root Directory
     |--------------------------------------------------------------------------
     |
-    | This value is the signature secret key of glide.
+    | This value is the root directory of glide watermarks storage.
     |
     */
 
-    'key' => env('APP_KEY'),
+    'watermarks' => env('GLIDE_WATERMARKS_ROOT_DIR', null),
 
     /*
     |--------------------------------------------------------------------------
-    | Glide Watermarks Storage Driver
+    | Glide Watermarks Path Prefix
     |--------------------------------------------------------------------------
     |
-    | This value is the driver of glide watermarks storage.
-    |
-    | Supported Drivers: see Laravel filesystems config.
+    | This value is the path prefix of glide watermarks.
     |
     */
 
-    'watermarks' => env('GLIDE_WATERMARKS_DRIVER', null),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Glide Watermarks Folder
-    |--------------------------------------------------------------------------
-    |
-    | This value is the folder of glide watermarks.
-    |
-    */
-
-    'watermarks_folder' => '',
+    'watermarks_path_prefix' => null,
 
     /*
     |--------------------------------------------------------------------------
