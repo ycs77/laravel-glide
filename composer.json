@@ -17,9 +17,11 @@
     ],
     "homepage": "https://github.com/ycs77/laravel-glide",
     "require": {
+        "php": "^8.0.2",
         "illuminate/http": ">=5.4",
         "illuminate/support": ">=5.4",
-        "league/glide-symfony": "^2.0.0"
+        "league/glide": "^2.2",
+        "league/glide-symfony": "^2.0"
     },
     "autoload": {
         "psr-4": {
