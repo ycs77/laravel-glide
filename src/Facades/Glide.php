@@ -3,6 +3,7 @@
 namespace Ycs77\LaravelGlide\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use League\Glide\Urls\UrlBuilderFactory;
 use Ycs77\LaravelGlide\Controllers\ImageController;
 
 /**
@@ -58,15 +59,12 @@ class Glide extends Facade
     /**
      * Register the glide image route.
      *
-     * @param  array  $options
      * @return void
      */
-    public static function route(array $options = [])
+    public static function route()
     {
-        $options['base_url'] = $options['base_url'] ?? self::$app['config']['glide.base_url'];
-
         static::$app->make('router')
-            ->get('/'.$options['base_url'].'/{path}', $options['action'] ?? '\\'.ImageController::class)
+            ->get('/'.self::$app['config']['glide.base_url'].'/{path}', '\\'.ImageController::class)
             ->where('path', '.*')
             ->name('image');
     }
@@ -84,6 +82,13 @@ class Glide extends Facade
             return $path;
         }
 
-        return static::$app['url']->route('image', array_merge(['path' => $path], $attributes));
+        $urlBuilder = UrlBuilderFactory::create(
+            '/'.self::$app['config']['glide.base_url'].'/',
+            self::$app['config']['glide.key']
+        );
+
+        $url = $urlBuilder->getUrl($path, $attributes);
+
+        return static::$app['url']->to($url);
     }
 }

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'source' => env('GLIDE_SOURCE_DRIVER', 'local'),
+    'source' => env('GLIDE_SOURCE_DRIVER', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -117,6 +117,19 @@ return [
     */
 
     'max_image_size' => null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Glide Signature Key
+    |--------------------------------------------------------------------------
+    |
+    | This value is the signature secret key of glide.
+    |
+    | Supported Drivers: APP_KEY, null (disable sign url)
+    |
+    */
+
+    'key' => env('APP_KEY'),
 
     /*
     |--------------------------------------------------------------------------
