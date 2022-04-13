@@ -4,8 +4,8 @@ namespace Ycs77\LaravelGlide\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use League\Glide\Responses\LaravelResponseFactory;
 use Ycs77\LaravelGlide\Facades\Glide;
+use Ycs77\LaravelGlide\Responses\LaravelResponseFactory;
 
 class ImageController extends Controller
 {
