@@ -125,7 +125,7 @@ return [
     |
     | This value is the signature secret key of glide.
     |
-    | Supported Drivers: APP_KEY, null (disable sign url)
+    | Supported Values: APP_KEY, null (disable sign url)
     |
     */
 
