@@ -20,9 +20,15 @@
         "php": "^8.0.2",
         "illuminate/http": ">=5.4",
         "illuminate/support": ">=5.4",
-        "league/glide": "^2.2",
-        "league/glide-symfony": "^2.0"
+        "league/glide": "^2.0 || ^3.0",
+        "league/glide-symfony": "dev-allow-glide-3"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/barryvdh/glide-symfony"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Ycs77\\LaravelGlide\\": "src"
